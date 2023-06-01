@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Banana Cat Token</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS';
+      background-color: #FDFD96;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    header {
+      text-align: left;
+      margin-top: 50px;
+    }
+
+    h1, h2 {
+      font-size: 32px;
+      color: purple;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      font-size: 16px;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 600px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    section {
+      margin: 0 auto;
+      max-width: 600px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+    }
+
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 100px;
+    }
+
+    .gif-footer img {
+      max-width: 100%;
+    }
+
+    div#container {
+      height: 600px;
+      width: 400px;
+    }
+
+    div.gif {
+      position: fixed;
+    }
+
+    div.gif1,
+    div.gif2,
+    div.gif3,
+    div.gif4,
+    div.gif5,
+    div.gif6,
+    div.gif7,
+    div.gif8,
+    div.gif9,
+    div.gif10 {
+      top: 1000px;
+      left: 1200px;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      animateDiv($('.gif1'));
+      animateDiv($('.gif2'));
+      animateDiv($('.gif3'));
+      animateDiv($('.gif4'));
+      animateDiv($('.gif5'));
+      animateDiv($('.gif6'));
+      animateDiv($('.gif7'));
+      animateDiv($('.gif8'));
+      animateDiv($('.gif9'));
+      animateDiv($('.gif10'));
+    });
+
+    function makeNewPosition($container) {
+      var h = $container.height() - 10;
+      var w = $container.width() - 10;
+      var nh = Math.floor(Math.random() * h);
+      var nw = Math.floor(Math.random() * w);
+      return [nh, nw];
+    }
+
+    function animateDiv($target) {
+      var newq = makeNewPosition($target.parent());
+      var oldq = $target.offset();
+      var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+      $target.animate({
+        top: newq[0],
+        left: newq[1]
+      }, speed, function() {
+        animateDiv($target);
+      });
+    }
+
+    function calcSpeed(prev, next) {
+      var x = Math.abs(prev[1] - next[1]);
+      var y = Math.abs(prev[0] - next[0]);
+      var greatest = x > y ? x : y;
+      var speedModifier = 0.1;
+      var speed = Math.ceil(greatest / speedModifier);
+      return speed;
+    }
+  </script>
+</head>
+<body>
+  <div>
+    <h1><strong> Attention Crypto Kitties!</strong></h1>
+    <p>Brace yourselves for an incredible launch that will whisker you off your paws! Introducing Banana Cat (<strong>$BCAT</strong>), the sizzling-hot ERC20 token hitting the market on Monday! With locked liquidity and renounced ownership, we've got your safety covered. Get ready to go bananas and ride the wave of prosperity!</p>
+
+    <h2><strong> Join us on an exhilarating adventure</strong></h2>
+    <p>where the crypto jungle meets unparalleled gains! Stake your <strong>$BCAT</strong> tokens to unlock juicy rewards and become part of our vibrant community. Prepare to unleash the feline frenzy!</p>
+
+    <h2><strong> Mark your calendars for the Tuesday launch</strong></h2>
+    <p>and prepare to embark on this extraordinary journey with Banana Cat. Follow us on social media for the latest updates, giveaways, and a roaring good time. It's time to scratch that itch for success!</p>
+  </div> 
+  <section>
+    <h2>Socials</h2>
+    <div class="social-icons">
+      <div>
+        <p>Telegram</p>
+        <a href="https://telegram.com/BananaCatPortal" target="_blank">
+          <img src="contact1.gif" alt="Telegram">
+        </a>
+      </div>
+      <div>
+        <p>Chart</p>
+        <a href="https://dextools.com/" target="_blank">
+          <img src="mon_chart.gif" alt="Chart">
+        </a>
+      </div>
+      <div>
+        <p>Twitter</p>
+        <a href="https://twitter.com/bananacaterc" target="_blank">
+          <img src="anbird.gif" alt="Twitter">
+        </a>
+      </div>
+      <div>
+        <p>Buy</p>
+        <a href="https://buylink.com" target="_blank">
+          <img src="buyknow.gif" alt="Buy">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Banana Cat Website. All rights reserved.</p>
+    <div class="gif-footer">
+      <a href="https://t.me/BananaCatPortal" target="_blank">
+        <img src="makemoney.gif" alt="Footer GIF">
+      </a>
+    </div>
+  </footer>
+
+  <div id="container">
+    <div class="gif gif1">
+      <img src="banana.gif" alt="GIF 1">
+    </div>
+    <div class="gif gif2">
+      <img src="flyincat.gif" alt="GIF 2">
+    </div>
+    <div class="gif gif3">
+      <img src="banana.gif" alt="GIF 3">
+    </div>
+    <div class="gif gif4">
+      <img src="flyincat.gif" alt="GIF 4">
+    </div>
+    <div class="gif gif5">
+      <img src="yike.gif" alt="GIF 5">
+    </div>
+    <div class="gif gif6">
+      <img src="yike.gif" alt="GIF 6">
+    </div>
+    <div class="gif gif7">
+      <img src="applecat.gif" alt="GIF 7">
+    </div>
+    <div class="gif gif8">
+      <img src="banancat.gif" alt="GIF 8">
+    </div>
+    <div class="gif gif9">
+      <img src="applecat.gif" alt="GIF 9">
+    </div>
+    <div class="gif gif10">
+      <img src="banancat.gif" alt="GIF 10">
+    </div>
+  </div>
+</body>
+</html>
