@@ -128,6 +128,13 @@
       var speed = Math.ceil(greatest / speedModifier);
       return speed;
     }
+    
+    document.addEventListener('click', function() { 
+        let audio = document.getElementById('music');
+        audio.volume = 0.2;
+        audio.play() },
+        { once: true });
+
   </script>
 </head>
 <body>
@@ -175,7 +182,10 @@
       </div>
     </div>
   </section>
-
+  <section>
+  <marquee id="scroll" scrollamount="4">Dance APU<audio controls="" id="music" autoplay="" class="audioplayer" name="media"><source src="imgs/02 The Rockafeller Skank.mp3" type="audio/mpeg"></audio>
+        </marquee>
+  </section>
   <footer>
     <p>&copy; 2023 Banana Cat Website. All rights reserved.</p>
     <div class="gif-footer">
